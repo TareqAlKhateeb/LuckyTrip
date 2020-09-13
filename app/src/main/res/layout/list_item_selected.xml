@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootConstraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin10"
+        android:alpha="0.8"
+        android:clickable="true"
+        android:focusable="true"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="@dimen/margin20"
+        app:cardElevation="@dimen/margin5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="lollipop">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/headerView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin50"
+                android:background="@drawable/app_color_gradiant"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="spread" />
+
+            <TextView
+                android:id="@+id/roomName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:paddingStart="@dimen/margin20"
+                android:paddingEnd="@dimen/margin10"
+                android:tag="TitleView"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintBottom_toBottomOf="@+id/headerView"
+                app:layout_constraintEnd_toStartOf="@+id/roomPrice"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/headerView" />
+
+            <TextView
+                android:id="@+id/roomPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:paddingStart="@dimen/margin10"
+                android:paddingEnd="@dimen/margin20"
+                android:tag="PriceView"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_small"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/headerView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/roomName"
+                app:layout_constraintTop_toTopOf="@+id/headerView" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/roomDesc"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/headerView" />
+
+            <TextView
+                android:id="@+id/roomDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:lines="1"
+                android:maxEms="10"
+                android:maxLines="2"
+                android:padding="@dimen/margin5"
+                android:tag="DescriptionView"
+                app:layout_constraintBottom_toTopOf="@+id/bedConfiguration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv"
+                app:layout_constraintTop_toBottomOf="@+id/headerView" />
+
+            <TextView
+                android:id="@+id/bedConfiguration"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:lines="1"
+                android:maxEms="10"
+                android:maxLines="2"
+                android:padding="@dimen/margin5"
+                android:tag="DescriptionView"
+                app:layout_constraintBottom_toTopOf="@+id/roomMaxOccupancy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv"
+                app:layout_constraintTop_toBottomOf="@+id/roomDesc" />
+
+            <TextView
+                android:id="@+id/roomMaxOccupancy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:lines="1"
+                android:maxEms="10"
+                android:maxLines="2"
+                android:padding="@dimen/margin5"
+                android:tag="DescriptionView"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv"
+                app:layout_constraintTop_toBottomOf="@+id/bedConfiguration" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="room"
+            type="com.example.luckytrip.data.models.Room" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0.8"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="@dimen/margin20"
+        app:cardElevation="@dimen/margin5"
+        android:layout_margin="@dimen/margin10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="lollipop">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rootConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin10">
+
+            <TextView
+                android:id="@+id/roomName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:tag="TitleView"
+                android:padding="@dimen/margin5"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
+                app:autoSizeTextType="uniform"
+                app:roomName="@{room}"
+                app:layout_constraintVertical_chainStyle="spread"
+                app:layout_constraintBottom_toTopOf="@+id/roomDesc"
+                app:layout_constraintEnd_toStartOf="@+id/roomPrice"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/roomPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:tag="PriceView"
+                android:padding="@dimen/margin5"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/font_small"
+                android:textStyle="bold"
+                app:roomPrice="@{room}"
+                app:layout_constraintStart_toEndOf="@+id/roomName"
+                app:layout_constraintBottom_toTopOf="@+id/bedConfiguration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/roomDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:lines="1"
+                android:padding="@dimen/margin5"
+                android:maxEms="10"
+                android:maxLines="2"
+                app:roomDesc="@{room}"
+                android:tag="DescriptionView"
+                app:layout_constraintBottom_toTopOf="@+id/roomMaxOccupancy"
+                app:layout_constraintEnd_toStartOf="@+id/bedConfiguration"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/roomName" />
+
+            <TextView
+                android:id="@+id/bedConfiguration"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:maxEms="10"
+                android:maxLines="2"
+                android:gravity="end"
+                app:roomBedConf="@{room}"
+                android:tag="DescriptionView"
+                android:padding="@dimen/margin5"
+                app:layout_constraintStart_toEndOf="@+id/roomDesc"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/roomPrice" />
+
+            <TextView
+                android:id="@+id/roomMaxOccupancy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:lines="1"
+                android:maxEms="10"
+                android:maxLines="2"
+                app:roomOccupancy="@{room}"
+                android:padding="@dimen/margin5"
+                android:tag="DescriptionView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/bedConfiguration"
+                app:layout_constraintTop_toBottomOf="@+id/roomDesc" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Room picker</string>
+    <string name="api_call_failed">Api call failed</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="something_to_make_you_happy">Something to make you happy</string>
+    <string name="explore">Explore</string>
+    <string name="pick_a_room">Pick a room</string>
+    <string name="max_occ">Max occupancy</string>
+    <string name="view">View selected room</string>
+</resources>

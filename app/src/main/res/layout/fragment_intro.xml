@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="introViewModel"
+            type="com.example.luckytrip.ui.fragments.intro.IntroViewModel" />
+
+    </data>
+
+    <FrameLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/purple"
+            tools:context=".ui.fragments.intro.IntroFragment">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.6"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_beach" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="cursive"
+                android:gravity="center"
+                android:padding="@dimen/margin30"
+                android:text="@string/something_to_make_you_happy"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_huge"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/exploreCardView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin60"
+                android:alpha="0.7"
+                app:cardCornerRadius="@dimen/margin0"
+                app:cardElevation="@dimen/margin5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/exploreButton"
+                        style="@style/BaseButton"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@color/pink"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:gravity="center"
+                        android:text="@string/explore"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                </FrameLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/showCardView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin60"
+                android:alpha="0.7"
+                android:visibility="gone"
+                android:layout_marginBottom="@dimen/margin50"
+                app:cardCornerRadius="@dimen/margin0"
+                app:cardElevation="@dimen/margin5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/viewButton"
+                        style="@style/BaseButton"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@color/blue"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:gravity="center"
+                        android:text="@string/view"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                </FrameLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:id="@+id/alphaLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/shadow_dark"
+                android:visibility="gone"
+                android:elevation="@dimen/margin50"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</layout>
